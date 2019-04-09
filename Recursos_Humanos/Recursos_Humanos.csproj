@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{062995CB-BF0C-4910-A188-7DF38625DDE4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Recursos_Humanos</RootNamespace>
+    <AssemblyName>Recursos_Humanos</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Cargos.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CargosController.cs" />
+    <Compile Include="Controllers\DepartamentosController.cs" />
+    <Compile Include="Controllers\EmpleadosController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Inactivar_EmpleadoController.cs" />
+    <Compile Include="Controllers\LicenciasController.cs" />
+    <Compile Include="Controllers\NominasController.cs" />
+    <Compile Include="Controllers\PermisosController.cs" />
+    <Compile Include="Controllers\Reporte_Entrada_EmpleadosController.cs" />
+    <Compile Include="Controllers\Reporte_PermisosController.cs" />
+    <Compile Include="Controllers\Salida_EmpleadosController.cs" />
+    <Compile Include="Controllers\VacaionesController.cs" />
+    <Compile Include="Controllers\V_Cargos_EmpleadosController.cs" />
+    <Compile Include="Controllers\V_Departamentos_EmpleadosController.cs" />
+    <Compile Include="Controllers\V_Empleados_ActivosController.cs" />
+    <Compile Include="Controllers\V_Empleados_InactivosController.cs" />
+    <Compile Include="Controllers\V_NominasController.cs" />
+    <Compile Include="Controllers\V_Salida_Empleados_MesController.cs" />
+    <Compile Include="Departamentos.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Licencias.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model_Recursos_Humanos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_Recursos_Humanos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model_Recursos_Humanos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model_Recursos_Humanos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_Recursos_Humanos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Nominas.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Permisos.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salida_Empleados.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vacaiones.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_Cargos_Empleados.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_Departamentos_Empleados.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_Empleados_Activos.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_Empleados_Inactivos.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_Nominas.cs">
+      <DependentUpon>Model_Recursos_Humanos.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\mobile-menu.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\img\google-map-marker.png" />
+    <Content Include="Content\img\hero-slide-1.jpg" />
+    <Content Include="Content\img\hero-slide-2.jpg" />
+    <Content Include="Content\img\hero-slide-3.jpg" />
+    <Content Include="Content\img\img-about.png" />
+    <Content Include="Content\img\img-offer-1.jpg" />
+    <Content Include="Content\img\img-offer-2.jpg" />
+    <Content Include="Content\img\img-offer-3.jpg" />
+    <Content Include="Content\img\img-offer-4.jpg" />
+    <Content Include="Content\img\img-page-title.jpg" />
+    <Content Include="Content\img\img-team-1.jpg" />
+    <Content Include="Content\img\img-team-2.jpg" />
+    <Content Include="Content\img\img-team-3.jpg" />
+    <Content Include="Content\img\img-team-4.jpg" />
+    <Content Include="Content\img\img-team-5.jpg" />
+    <Content Include="Content\img\img-team-6.jpg" />
+    <Content Include="Content\img\img-testimonial-1.jpg" />
+    <Content Include="Content\img\img-testimonial-2.jpg" />
+    <Content Include="Content\img\img-testimonial-3.jpg" />
+    <Content Include="Content\img\logo-client-1.jpg" />
+    <Content Include="Content\img\logo-client-2.jpg" />
+    <Content Include="Content\img\logo-client-3.jpg" />
+    <Content Include="Content\img\logo-client-3.png" />
+    <Content Include="Content\img\logo-client-4.jpg" />
+    <Content Include="Content\img\logo-client-5.jpg" />
+    <Content Include="Content\img\logo-client-6.jpg" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\preloader.gif" />
+    <Content Include="Content\img\preloader.svg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="fonts\fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="fonts\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Model_Recursos_Humanos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model_Recursos_Humanos.Context.cs</LastGenOutput>
+      <DependentUpon>Model_Recursos_Humanos.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model_Recursos_Humanos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_Recursos_Humanos.edmx</DependentUpon>
+      <LastGenOutput>Model_Recursos_Humanos.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Model_Recursos_Humanos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model_Recursos_Humanos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model_Recursos_Humanos.edmx.diagram">
+      <DependentUpon>Model_Recursos_Humanos.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\css\.DS_Store" />
+    <Content Include="fonts\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fonts\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="fonts\fonts\font-awesome\less\animated.less" />
+    <Content Include="fonts\fonts\font-awesome\less\bordered-pulled.less" />
+    <Content Include="fonts\fonts\font-awesome\less\core.less" />
+    <Content Include="fonts\fonts\font-awesome\less\fixed-width.less" />
+    <Content Include="fonts\fonts\font-awesome\less\font-awesome.less" />
+    <Content Include="fonts\fonts\font-awesome\less\icons.less" />
+    <Content Include="fonts\fonts\font-awesome\less\larger.less" />
+    <Content Include="fonts\fonts\font-awesome\less\list.less" />
+    <Content Include="fonts\fonts\font-awesome\less\mixins.less" />
+    <Content Include="fonts\fonts\font-awesome\less\path.less" />
+    <Content Include="fonts\fonts\font-awesome\less\rotated-flipped.less" />
+    <Content Include="fonts\fonts\font-awesome\less\stacked.less" />
+    <Content Include="fonts\fonts\font-awesome\less\variables.less" />
+    <Content Include="fonts\fonts\font-awesome\scss\font-awesome.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_animated.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_core.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_icons.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_larger.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_list.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_mixins.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_path.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_stacked.scss" />
+    <Content Include="fonts\fonts\font-awesome\scss\_variables.scss" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\flexSlider\flexslider.css" />
+    <Content Include="Scripts\js\flexSlider\fonts\flexslider-icon.svg" />
+    <Content Include="Scripts\js\flexSlider\images\bg_play_pause.png" />
+    <Content Include="Scripts\js\flexSlider\jquery.flexslider-min.js" />
+    <Content Include="Scripts\js\flexSlider\jquery.flexslider.js" />
+    <Content Include="Scripts\js\footer.js" />
+    <Content Include="Scripts\js\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\js\mobile-menu.js" />
+    <Content Include="Scripts\js\scripts.js" />
+    <Content Include="Scripts\js\smoothscroll.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Empleados\Create.cshtml" />
+    <Content Include="Views\Empleados\Delete.cshtml" />
+    <Content Include="Views\Empleados\Details.cshtml" />
+    <Content Include="Views\Empleados\Edit.cshtml" />
+    <Content Include="Views\Empleados\Index.cshtml" />
+    <Content Include="Views\Departamentos\Create.cshtml" />
+    <Content Include="Views\Departamentos\Delete.cshtml" />
+    <Content Include="Views\Departamentos\Details.cshtml" />
+    <Content Include="Views\Departamentos\Edit.cshtml" />
+    <Content Include="Views\Departamentos\Index.cshtml" />
+    <Content Include="Views\Cargos\Create.cshtml" />
+    <Content Include="Views\Cargos\Delete.cshtml" />
+    <Content Include="Views\Cargos\Details.cshtml" />
+    <Content Include="Views\Cargos\Edit.cshtml" />
+    <Content Include="Views\Cargos\Index.cshtml" />
+    <Content Include="Views\Nominas\Create.cshtml" />
+    <Content Include="Views\Nominas\Delete.cshtml" />
+    <Content Include="Views\Nominas\Details.cshtml" />
+    <Content Include="Views\Nominas\Edit.cshtml" />
+    <Content Include="Views\Nominas\Index.cshtml" />
+    <Content Include="Views\Licencias\Create.cshtml" />
+    <Content Include="Views\Licencias\Delete.cshtml" />
+    <Content Include="Views\Licencias\Details.cshtml" />
+    <Content Include="Views\Licencias\Edit.cshtml" />
+    <Content Include="Views\Licencias\Index.cshtml" />
+    <Content Include="Views\Permisos\Create.cshtml" />
+    <Content Include="Views\Permisos\Delete.cshtml" />
+    <Content Include="Views\Permisos\Details.cshtml" />
+    <Content Include="Views\Permisos\Edit.cshtml" />
+    <Content Include="Views\Permisos\Index.cshtml" />
+    <Content Include="Views\Salida_Empleados\Create.cshtml" />
+    <Content Include="Views\Salida_Empleados\Delete.cshtml" />
+    <Content Include="Views\Salida_Empleados\Details.cshtml" />
+    <Content Include="Views\Salida_Empleados\Edit.cshtml" />
+    <Content Include="Views\Salida_Empleados\Index.cshtml" />
+    <Content Include="Views\V_Cargos_Empleados\Create.cshtml" />
+    <Content Include="Views\V_Cargos_Empleados\Delete.cshtml" />
+    <Content Include="Views\V_Cargos_Empleados\Details.cshtml" />
+    <Content Include="Views\V_Cargos_Empleados\Edit.cshtml" />
+    <Content Include="Views\V_Cargos_Empleados\Index.cshtml" />
+    <Content Include="Views\V_Departamentos_Empleados\Create.cshtml" />
+    <Content Include="Views\V_Departamentos_Empleados\Delete.cshtml" />
+    <Content Include="Views\V_Departamentos_Empleados\Details.cshtml" />
+    <Content Include="Views\V_Departamentos_Empleados\Edit.cshtml" />
+    <Content Include="Views\V_Departamentos_Empleados\Index.cshtml" />
+    <Content Include="Views\V_Empleados_Inactivos\Create.cshtml" />
+    <Content Include="Views\V_Empleados_Inactivos\Delete.cshtml" />
+    <Content Include="Views\V_Empleados_Inactivos\Details.cshtml" />
+    <Content Include="Views\V_Empleados_Inactivos\Edit.cshtml" />
+    <Content Include="Views\V_Empleados_Inactivos\Index.cshtml" />
+    <Content Include="Views\Vacaiones\Create.cshtml" />
+    <Content Include="Views\Vacaiones\Delete.cshtml" />
+    <Content Include="Views\Vacaiones\Details.cshtml" />
+    <Content Include="Views\Vacaiones\Edit.cshtml" />
+    <Content Include="Views\Vacaiones\Index.cshtml" />
+    <Content Include="Scripts\js\.DS_Store" />
+    <Content Include="Scripts\js\flexSlider\flexslider.less" />
+    <Content Include="Scripts\js\flexSlider\fonts\flexslider-icon.eot" />
+    <Content Include="Scripts\js\flexSlider\fonts\flexslider-icon.ttf" />
+    <Content Include="Scripts\js\flexSlider\fonts\flexslider-icon.woff" />
+    <Content Include="Views\V_Nominas\Create.cshtml" />
+    <Content Include="Views\V_Nominas\Delete.cshtml" />
+    <Content Include="Views\V_Nominas\Details.cshtml" />
+    <Content Include="Views\V_Nominas\Edit.cshtml" />
+    <Content Include="Views\V_Nominas\Index.cshtml" />
+    <Content Include="Views\Inactivar_Empleado\Create.cshtml" />
+    <Content Include="Views\Inactivar_Empleado\Delete.cshtml" />
+    <Content Include="Views\Inactivar_Empleado\Details.cshtml" />
+    <Content Include="Views\Inactivar_Empleado\Edit.cshtml" />
+    <Content Include="Views\Inactivar_Empleado\Index.cshtml" />
+    <Content Include="Views\Reporte_Permisos\Create.cshtml" />
+    <Content Include="Views\Reporte_Permisos\Delete.cshtml" />
+    <Content Include="Views\Reporte_Permisos\Details.cshtml" />
+    <Content Include="Views\Reporte_Permisos\Edit.cshtml" />
+    <Content Include="Views\Reporte_Permisos\Index.cshtml" />
+    <Content Include="Views\V_Empleados_Activos\Create.cshtml" />
+    <Content Include="Views\V_Empleados_Activos\Delete.cshtml" />
+    <Content Include="Views\V_Empleados_Activos\Details.cshtml" />
+    <Content Include="Views\V_Empleados_Activos\Edit.cshtml" />
+    <Content Include="Views\V_Empleados_Activos\Index.cshtml" />
+    <Content Include="Views\V_Empleados_Activos\Buscar.cshtml" />
+    <Content Include="Views\V_Salida_Empleados_Mes\Create.cshtml" />
+    <Content Include="Views\V_Salida_Empleados_Mes\Delete.cshtml" />
+    <Content Include="Views\V_Salida_Empleados_Mes\Details.cshtml" />
+    <Content Include="Views\V_Salida_Empleados_Mes\Edit.cshtml" />
+    <Content Include="Views\V_Salida_Empleados_Mes\Index.cshtml" />
+    <Content Include="Views\V_Salida_Empleados_Mes\Buscar.cshtml" />
+    <Content Include="Views\V_Empleados_Activos\Buscar_Departamento.cshtml" />
+    <Content Include="Views\Reporte_Permisos\Buscar.cshtml" />
+    <Content Include="Views\Reporte_Entrada_Empleados\Create.cshtml" />
+    <Content Include="Views\Reporte_Entrada_Empleados\Delete.cshtml" />
+    <Content Include="Views\Reporte_Entrada_Empleados\Details.cshtml" />
+    <Content Include="Views\Reporte_Entrada_Empleados\Edit.cshtml" />
+    <Content Include="Views\Reporte_Entrada_Empleados\Index.cshtml" />
+    <Content Include="Views\Reporte_Entrada_Empleados\Buscar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58715</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58715/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

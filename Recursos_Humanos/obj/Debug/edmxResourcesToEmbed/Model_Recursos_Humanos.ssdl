@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Recursos_HumanosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cargos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Departamentos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo_Departamento" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo_Empleado" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Departamento" Type="int" />
+    <Property Name="Cargo" Type="int" />
+    <Property Name="Fecha_Ingreso" Type="datetime" />
+    <Property Name="Salario" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="Estatus" Type="bit" />
+  </EntityType>
+  <EntityType Name="Licencias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Empleado_id" Type="int" />
+    <Property Name="Desde" Type="datetime" />
+    <Property Name="Hasta" Type="datetime" />
+    <Property Name="Motivos" Type="varchar" MaxLength="200" />
+    <Property Name="Comentarios" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Nominas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ano" Type="varchar" MaxLength="10" />
+    <Property Name="Mes" Type="varchar" MaxLength="10" />
+    <Property Name="Monto_Total" Type="decimal" Precision="13" Scale="2" />
+  </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Empleado_id" Type="int" />
+    <Property Name="Desde" Type="datetime" />
+    <Property Name="Hasta" Type="datetime" />
+    <Property Name="Comentarios" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Salida_Empleados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Empleado_id" Type="int" />
+    <Property Name="Tipo_Salida" Type="varchar" MaxLength="50" />
+    <Property Name="Fecha_Salida" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Vacaiones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Empleado_id" Type="int" />
+    <Property Name="Desde" Type="datetime" />
+    <Property Name="Hasta" Type="datetime" />
+    <Property Name="Correspondiente_Ano" Type="varchar" MaxLength="10" />
+    <Property Name="Comentarios" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Recursos_Humanos.dbo.V_Cargos_Empleados' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="V_Cargos_Empleados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Recursos_Humanos.dbo.V_Departamentos_Empleados' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="V_Departamentos_Empleados">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Codigo_Departamento" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo_Departamento" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Recursos_Humanos.dbo.V_Empleados_Activos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="V_Empleados_Activos">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Codigo_Empleado" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo_Empleado" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Departamento" Type="int" />
+    <Property Name="Cargo" Type="int" />
+    <Property Name="Fecha_Ingreso" Type="datetime" />
+    <Property Name="Salario" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="Estatus" Type="bit" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Recursos_Humanos.dbo.V_Empleados_Inactivos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="V_Empleados_Inactivos">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Codigo_Empleado" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo_Empleado" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Departamento" Type="int" />
+    <Property Name="Cargo" Type="int" />
+    <Property Name="Fecha_Ingreso" Type="datetime" />
+    <Property Name="Salario" Type="decimal" Precision="13" Scale="2" />
+    <Property Name="Estatus" Type="bit" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Recursos_Humanos.dbo.V_Nominas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="V_Nominas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ano" Type="varchar" MaxLength="10" />
+    <Property Name="Mes" Type="varchar" MaxLength="10" />
+    <Property Name="Monto_Total" Type="decimal" Precision="13" Scale="2" />
+  </EntityType>
+  <Association Name="FK_Cargo_Empleados">
+    <End Role="Cargos" Type="Self.Cargos" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="Cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Departamento_Empleados">
+    <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamentos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="Departamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_Licencias">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Licencias" Type="Self.Licencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Licencias">
+        <PropertyRef Name="Empleado_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_Permisos">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Permisos">
+        <PropertyRef Name="Empleado_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_Salida">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Salida_Empleados" Type="Self.Salida_Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Salida_Empleados">
+        <PropertyRef Name="Empleado_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_Vacaciones">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Vacaiones" Type="Self.Vacaiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vacaiones">
+        <PropertyRef Name="Empleado_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Recursos_HumanosModelStoreContainer">
+    <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Licencias" EntityType="Self.Licencias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nominas" EntityType="Self.Nominas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Salida_Empleados" EntityType="Self.Salida_Empleados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vacaiones" EntityType="Self.Vacaiones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="V_Cargos_Empleados" EntityType="Self.V_Cargos_Empleados" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_Cargos_Empleados].[Id] AS [Id], 
+    [V_Cargos_Empleados].[Nombre] AS [Nombre]
+    FROM [dbo].[V_Cargos_Empleados] AS [V_Cargos_Empleados]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_Departamentos_Empleados" EntityType="Self.V_Departamentos_Empleados" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_Departamentos_Empleados].[Id] AS [Id], 
+    [V_Departamentos_Empleados].[Codigo_Departamento] AS [Codigo_Departamento], 
+    [V_Departamentos_Empleados].[Nombre] AS [Nombre]
+    FROM [dbo].[V_Departamentos_Empleados] AS [V_Departamentos_Empleados]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_Empleados_Activos" EntityType="Self.V_Empleados_Activos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_Empleados_Activos].[Id] AS [Id], 
+    [V_Empleados_Activos].[Codigo_Empleado] AS [Codigo_Empleado], 
+    [V_Empleados_Activos].[Nombre] AS [Nombre], 
+    [V_Empleados_Activos].[Apellido] AS [Apellido], 
+    [V_Empleados_Activos].[Telefono] AS [Telefono], 
+    [V_Empleados_Activos].[Departamento] AS [Departamento], 
+    [V_Empleados_Activos].[Cargo] AS [Cargo], 
+    [V_Empleados_Activos].[Fecha_Ingreso] AS [Fecha_Ingreso], 
+    [V_Empleados_Activos].[Salario] AS [Salario], 
+    [V_Empleados_Activos].[Estatus] AS [Estatus]
+    FROM [dbo].[V_Empleados_Activos] AS [V_Empleados_Activos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_Empleados_Inactivos" EntityType="Self.V_Empleados_Inactivos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_Empleados_Inactivos].[Id] AS [Id], 
+    [V_Empleados_Inactivos].[Codigo_Empleado] AS [Codigo_Empleado], 
+    [V_Empleados_Inactivos].[Nombre] AS [Nombre], 
+    [V_Empleados_Inactivos].[Apellido] AS [Apellido], 
+    [V_Empleados_Inactivos].[Telefono] AS [Telefono], 
+    [V_Empleados_Inactivos].[Departamento] AS [Departamento], 
+    [V_Empleados_Inactivos].[Cargo] AS [Cargo], 
+    [V_Empleados_Inactivos].[Fecha_Ingreso] AS [Fecha_Ingreso], 
+    [V_Empleados_Inactivos].[Salario] AS [Salario], 
+    [V_Empleados_Inactivos].[Estatus] AS [Estatus]
+    FROM [dbo].[V_Empleados_Inactivos] AS [V_Empleados_Inactivos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_Nominas" EntityType="Self.V_Nominas" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_Nominas].[Id] AS [Id], 
+    [V_Nominas].[Ano] AS [Ano], 
+    [V_Nominas].[Mes] AS [Mes], 
+    [V_Nominas].[Monto_Total] AS [Monto_Total]
+    FROM [dbo].[V_Nominas] AS [V_Nominas]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Cargo_Empleados" Association="Self.FK_Cargo_Empleados">
+      <End Role="Cargos" EntitySet="Cargos" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Departamento_Empleados" Association="Self.FK_Departamento_Empleados">
+      <End Role="Departamentos" EntitySet="Departamentos" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_Licencias" Association="Self.FK_Empleados_Licencias">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="Licencias" EntitySet="Licencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_Permisos" Association="Self.FK_Empleados_Permisos">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="Permisos" EntitySet="Permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_Salida" Association="Self.FK_Empleados_Salida">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="Salida_Empleados" EntitySet="Salida_Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_Vacaciones" Association="Self.FK_Empleados_Vacaciones">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="Vacaiones" EntitySet="Vacaiones" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

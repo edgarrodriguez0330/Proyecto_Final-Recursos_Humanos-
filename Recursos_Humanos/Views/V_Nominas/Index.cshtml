@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Recursos_Humanos.V_Nominas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="single-page-title">
+    <div class="container text-center">
+        <h2>Nominas</h2>
+    </div>
+</section>
+
+<div class="container body-content topSub">
+
+
+    <table class="table" style="margin-top:20px">
+        <tr class="thEstilos">
+            <th>
+                @Html.DisplayNameFor(model => model.Ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monto_Total)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="thEstilos2">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Monto_Total)
+                </td>
+                <td>
+                  
+
+            </tr>
+        }
+
+    </table>
+
+</div>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Recursos_Humanos.Licencias>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <section class="single-page-title">
+        <div class="container text-center">
+            <h2>Licencias</h2>
+        </div>
+    </section>
+
+    <div class="container body-content topSub">
+        <div class="btn btn-blanco">
+            @Html.ActionLink("Crear Nuevo", "Create")
+        </div>
+        <table class="table" style="margin-top:20px">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Desde)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hasta)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Motivos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comentarios)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleados.Nombre)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Desde)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hasta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Motivos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comentarios)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empleados.Nombre)
+                    </td>
+                    <td>
+                        <div class="btn btn-warning">
+                            @Html.ActionLink("Editar", "Edit", new { id = item.Id })
+                        </div>
+                        <div class="btn btn-success">
+                            @Html.ActionLink("Detalles", "Details", new { id = item.Id })
+                        </div>
+                        <div class="btn btn-danger">
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                        </div>
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>

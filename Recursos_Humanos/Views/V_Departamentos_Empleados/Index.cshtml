@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Recursos_Humanos.V_Departamentos_Empleados>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <section class="single-page-title">
+        <div class="container text-center">
+            <h2>Departamentos</h2>
+        </div>
+    </section>
+
+
+    <div class="container body-content topSub">
+        <table class="table" style="margin-top:20px">
+            <tr class="thEstilos">
+                <th>
+                    @Html.DisplayName("Departamentos")
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr class="thEstilos2">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                   
+                </tr>
+            }
+
+        </table>
+    </div>

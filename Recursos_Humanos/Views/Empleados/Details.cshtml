@@ -1,0 +1,105 @@
+﻿@model Recursos_Humanos.Empleados
+
+@{
+    ViewBag.Title = "Details";
+}
+
+    <section class="single-page-title">
+        <div class="container text-center">
+            <h2>Empleados</h2>
+        </div>
+    </section>
+
+    <div class="container body-content topSub">
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayName("Codigo")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Codigo_Empleado)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Apellido)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Telefono)
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Fecha Ingreso")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Fecha_Ingreso)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Salario)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Salario)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Estatus)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Estatus)
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Cargo")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Cargos.Nombre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Departamento")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Departamentos.Nombre)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="form-group" style="margin-top:20px">
+            <div>
+                <div class="btn btn-primary" style="color:black">
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.Id })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <div class="btn btn-warning" style="margin-top:20px; margin-bottom:20px; ">
+                    @Html.ActionLink("Regresar", "Index")
+                </div>
+            </div>
+        </div>
+    </div>
