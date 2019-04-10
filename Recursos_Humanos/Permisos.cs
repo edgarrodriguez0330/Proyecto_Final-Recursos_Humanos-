@@ -14,19 +14,22 @@ namespace Recursos_Humanos
 
 using System;
     using System.Collections.Generic;
-    
-public partial class Permisos
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Permisos
 {
 
     public int Id { get; set; }
-
-    public Nullable<int> Empleado_id { get; set; }
-
-    public Nullable<System.DateTime> Desde { get; set; }
-
-    public Nullable<System.DateTime> Hasta { get; set; }
-
-    public string Comentarios { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public Nullable<int> Empleado_id { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        [DataType(DataType.Date)]
+        public Nullable<System.DateTime> Desde { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        [DataType(DataType.Date)]
+        public Nullable<System.DateTime> Hasta { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public string Comentarios { get; set; }
 
 
 

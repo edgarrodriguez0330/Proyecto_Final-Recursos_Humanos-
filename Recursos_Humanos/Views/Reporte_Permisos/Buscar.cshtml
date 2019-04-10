@@ -4,52 +4,59 @@
     ViewBag.Title = "Buscar";
    
 }
+    <section class="single-page-title">
+        <div class="container text-center">
+            <h2>Buscar</h2>
+        </div>
+    </section>
 
-<h2>Reporte de Permisos</h2>
+    <div class="container body-content" style="margin-top:100px">
+        @using (Html.BeginForm("Buscar", "Reporte_Permisos", FormMethod.Get))
+        {
+            <p>
+                <input type="text" name="search" value="" placeholder="Buscar por Id Empleado..." class="form-control" />
+                <br />
+                <input type="submit" value="Buscar por Id Empleado" class="btn btn-success" />
+                <a href="/Reporte_Permisos/Index" class="btn btn-success">Ver Todas las Salidas&raquo;</a>
+            </p>
+        }
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Desde)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hasta)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comentarios)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleados.Nombre)
+                </th>
+                <th></th>
+            </tr>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Desde)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hasta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comentarios)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Empleados.Nombre)
-        </th>
-        <th></th>
-    </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Desde)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hasta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comentarios)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empleados.Nombre)
+                    </td>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Desde)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hasta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comentarios)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Empleados.Nombre)
-            </td>
-            
-        </tr>
-    }
+                </tr>
+            }
 
-</table>
-@using (Html.BeginForm("Buscar", "Reporte_Permisos", FormMethod.Get))
-{
-    <p>
-        <input type="text" name="search" value="" placeholder="Buscar por Id Empleado..." class="form-control" />
-        <br />
-        <input type="submit" value="Buscar por Id Empleado" class="btn btn-success" />
-        <a href="/Reporte_Permisos/Index" class="btn btn-success">Ver Todas las Salidas&raquo;</a>
-    </p>
-}
+        </table>
+
+    </div>
+

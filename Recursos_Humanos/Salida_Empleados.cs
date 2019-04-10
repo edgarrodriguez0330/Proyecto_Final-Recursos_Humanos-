@@ -14,17 +14,19 @@ namespace Recursos_Humanos
 
 using System;
     using System.Collections.Generic;
-    
-public partial class Salida_Empleados
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Salida_Empleados
 {
 
     public int Id { get; set; }
-
-    public Nullable<int> Empleado_id { get; set; }
-
-    public string Tipo_Salida { get; set; }
-
-    public Nullable<System.DateTime> Fecha_Salida { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public Nullable<int> Empleado_id { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public string Tipo_Salida { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        [DataType(DataType.Date)]
+        public Nullable<System.DateTime> Fecha_Salida { get; set; }
 
 
 

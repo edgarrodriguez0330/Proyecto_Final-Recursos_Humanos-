@@ -14,8 +14,9 @@ namespace Recursos_Humanos
 
 using System;
     using System.Collections.Generic;
-    
-public partial class Cargos
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Cargos
 {
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -28,8 +29,8 @@ public partial class Cargos
 
 
     public int Id { get; set; }
-
-    public string Nombre { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public string Nombre { get; set; }
 
 
 

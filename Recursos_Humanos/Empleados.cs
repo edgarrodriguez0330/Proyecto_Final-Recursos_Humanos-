@@ -14,8 +14,9 @@ namespace Recursos_Humanos
 
 using System;
     using System.Collections.Generic;
-    
-public partial class Empleados
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Empleados
 {
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -34,24 +35,25 @@ public partial class Empleados
 
 
     public int Id { get; set; }
-
+        [Required(ErrorMessage ="Campo Requerido")]
     public int Codigo_Empleado { get; set; }
-
-    public string Nombre { get; set; }
-
-    public string Apellido { get; set; }
-
-    public string Telefono { get; set; }
-
-    public Nullable<int> Departamento { get; set; }
-
-    public Nullable<int> Cargo { get; set; }
-
-    public Nullable<System.DateTime> Fecha_Ingreso { get; set; }
-
-    public Nullable<decimal> Salario { get; set; }
-
-    public Nullable<bool> Estatus { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public string Nombre { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public string Apellido { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public string Telefono { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public Nullable<int> Departamento { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public Nullable<int> Cargo { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        [DataType(DataType.Date)]
+        public Nullable<System.DateTime> Fecha_Ingreso { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public Nullable<decimal> Salario { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public Nullable<bool> Estatus { get; set; }
 
 
 

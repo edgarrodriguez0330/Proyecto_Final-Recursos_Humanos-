@@ -14,8 +14,9 @@ namespace Recursos_Humanos
 
 using System;
     using System.Collections.Generic;
-    
-public partial class Departamentos
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Departamentos
 {
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -28,10 +29,10 @@ public partial class Departamentos
 
 
     public int Id { get; set; }
-
-    public int Codigo_Departamento { get; set; }
-
-    public string Nombre { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public int Codigo_Departamento { get; set; }
+        [Required(ErrorMessage = "Campo Requerido")]
+        public string Nombre { get; set; }
 
 
 

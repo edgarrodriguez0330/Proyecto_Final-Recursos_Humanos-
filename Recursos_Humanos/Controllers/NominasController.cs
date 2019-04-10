@@ -69,7 +69,9 @@ namespace Recursos_Humanos.Controllers
             decimal suma;
 
             string sql = "select SUM(Salario) from Empleados where Estatus = 1";
-            const string connectionString = "data source=EDGAR-PC;initial catalog=Recursos_Humanos;user id=sa;password=123;MultipleActiveResultSets=True;App=EntityFramework&quot";
+           // const string connectionString = "data source=EDGAR-PC;initial catalog=Recursos_Humanos;user id=sa;password=123;MultipleActiveResultSets=True;App=EntityFramework&quot";
+            const string connectionString = "data source=DESKTOP-UA2BO3M\\MYSQLSERVER;initial catalog=Recursos_Humanos;Integrated Security=true;MultipleActiveResultSets=True;App=EntityFramework&quot";
+
             //const string ConnectionString = "Recursos_HumanosEntities";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

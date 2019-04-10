@@ -4,53 +4,55 @@
     ViewBag.Title = "Buscar";
 }
 
-<h2>Buscar</h2>
+    <section class="single-page-title">
+        <div class="container text-center">
+            <h2>Buscar</h2>
+        </div>
+    </section>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo_Salida)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fecha_Salida)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Empleados.Nombre)
-        </th>
-        <th></th>
-    </tr>
+    <div class="container body-content" style="margin-top:100px">
+        @using (Html.BeginForm("Buscar", "V_Salida_Empleados_Mes", FormMethod.Get))
+        {
+            <p>
+                <input type="text" name="search" value="" placeholder="Buscar por fecha..." class="form-control" />
+                <br />
+                <input type="submit" value="Buscar" class="btn btn-success" />
+                <a href="/Salida_Empleados/Index" class="btn btn-success">Ver Todas las Salidas&raquo;</a>
+            </p>
+        }
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo_Salida)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecha_Salida)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Empleados.Nombre)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tipo_Salida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fecha_Salida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleados.Nombre)
+                </th>
+                <th></th>
+            </tr>
 
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tipo_Salida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_Salida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empleados.Nombre)
+                    </td>
 
-@using (Html.BeginForm("Buscar", "V_Salida_Empleados_Mes", FormMethod.Get))
-{
-<p>
-    <input type="text" name="search" value="" placeholder="Buscar por fecha..." class="form-control" />
-    <br />
-    <input type="submit" value="Buscar" class="btn btn-success" />
-    <a href="/Salida_Empleados/Index" class="btn btn-success">Ver Todas las Salidas&raquo;</a>
-</p>
-}
+                </tr>
+            }
+
+        </table>
+
+        
+
+    </div>
